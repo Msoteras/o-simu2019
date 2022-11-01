@@ -3,7 +3,7 @@ import example.*
 describe "Test Lineas Telefonicas"{
 	
 	const linea1 = new Linea(nroDeTelefono=1137753743,tipoDeLinea=comun)
-	const consumoMegas = new Internet(cantidadMB=5,precio=2,fecha=fechaHoy)
+	const consumoMegas = new Internet(cantidadMB=5,precioBase=2,fecha=fechaHoy)
 	const packInternetIlimitado= new InternetIlimitado(vencimiento = null)
 	
 	test "Una linea sin packs no puede realizar un consumo" {
