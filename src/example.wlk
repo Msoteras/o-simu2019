@@ -111,7 +111,7 @@ class MBLibresPlusPlus inherits MBLibres{
 // var fecha= newDate(day=10,month=10,year=2022)
 class Consumo{
 	const property fecha
-	
+	var precioBase
 	method costo()
 	
 	method seHizoEnFinde() = fecha.dayOfWeek() == sunday or fecha.dayOfWeek() == saturday
@@ -120,20 +120,18 @@ class Consumo{
 class Llamada inherits Consumo{
 	const segundos
 	var precioVariable 
-	var precioFijo
 	const property esDeLlamada = true
 	
 	
-	override method costo() = precioFijo + precioVariable * (segundos-30).max(0)
+	override method costo() = precioBase + precioVariable * (segundos-30).max(0)
 	
 }
 
 class Internet inherits Consumo{
 	const property cantidadMB
-	var precio
 	const property esDeLlamada = false
 	
-	override method costo() = self.cantidadMB() * precio
+	override method costo() = self.cantidadMB() * precioBase
 	
 }
 

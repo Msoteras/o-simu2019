@@ -26,3 +26,30 @@ describe "Test Lineas Telefonicas"{
 	}
 
 }
+
+// Punto 10
+
+/*
+ * 	En mi caso, al haber solucionado tanto los apcks como los consumos con herencia, para poder agregar alguno de ellos se debera agregar una clase con el nombre correspodiente que herede
+ * 	de cada respectivo caso. Sin embargo, tambien se podria haber resuelto con el uso de composicion, haciendo que todos los "packs" respondan a una misma interfaz y los consumos lo mismo por su lado
+ * Para los packs, agregar un nuevo pack implica agregar una clase que herede de la clase pack, lo que nos asegurara que el mismo herede los metodos requeridos para todo pack, como todos aquellos que nos hablan del vencimiento del mismo.
+ * Sin embargo, hay una serie de packs que son nombrados en la clase super, pero a quienes deberiamos asignarles el comportamiento propio del packs que estamos agregando.
+ * Por ejemplo, que un pack satisfaga un consumo va a depender del tipo de pack que se este agregando, lo mismo para lo que implica hacer un consumo haciendo uso de este pack. Por ello se requiere que los packs agregados respondan al mismo polimorfismo
+ * al que ya responden los packs creados. Lo mismo para el estaAcabdo, que dependera de si cuenta con alguna limitacion o no mas alla de la fecha de vencimiento.
+ * 
+ * De igual forma deberia hacerse frente a los consumos. Un nuevo consumo deberia responder al mensaje costo() segun lo que implique para este nuevo consumo y
+ * y responder al metodo esDeLlamada, que es utilizado por los packs indistintamente del consumo del que se trate. No seria necesario crear nuevamente la constante fecha ya que se heredaria por herencia de la superclase, la cual es necesaria por el uso de la misma en las lineas
+ * (Tambien deberia heredar de la clase super consumo
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
