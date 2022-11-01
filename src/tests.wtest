@@ -1,6 +1,28 @@
+import example.*
 
-test "testX" {
+describe "Test Lineas Telefonicas"{
+	
+	const linea1 = new Linea(nroDeTelefono=1137753743,tipoDeLinea=comun)
+	const consumoMegas = new Internet(cantidadMB=5,precio=2,fecha=fechaHoy)
+	const packInternetIlimitado= new InternetIlimitado(vencimiento = null)
+	
+	test "Una linea sin packs no puede realizar un consumo" {
 
-	assert.that(true)
+		assert.throwsExceptionWithMessage("El consumo no puede ser realizado", {linea1.realizar(consumoMegas)})
+
+	}
+
+	test "Agregar un pack a una linea (efecto)" {
+		
+		linea1.agregarPack(packInternetIlimitado)
+		assert.equals(packInternetIlimitado, linea1.packs().head())
+
+	}
+
+	test "El Pack de Internet Ilimitado no puede usarse si no es fin de semana" {
+	
+		assert.notThat(linea1.hayAlgunPackQueSatisface(consumoMegas))
+
+	}
 
 }
